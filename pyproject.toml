@@ -1,0 +1,14 @@
+[project]
+name = "icmp-packet-checksum"
+version = "0.1.0"
+description = "Builds ICMP echo packets with type, code, ID, and sequence fields, then computes and validates the RFC 1071 checksum."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
