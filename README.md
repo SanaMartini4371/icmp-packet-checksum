@@ -42,3 +42,10 @@ The library constructs and parses echo request (type 8) and echo reply (type 0) 
 - `build_packet(icmp_type, code, identifier, sequence, payload=b"") -> IcmpEchoPacket` — builds a packet with a computed checksum.
 - `parse_packet(data: bytes) -> IcmpEchoPacket` — parses and validates raw bytes; raises `ChecksumError` on mismatch.
 - `ChecksumError` — raised by `parse_packet` when the checksum does not match.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
