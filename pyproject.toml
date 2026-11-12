@@ -1,6 +1,6 @@
 [project]
 name = "icmp-packet-checksum"
-version = "0.1.0"
+version = "0.1.1"
 description = "Builds ICMP echo packets with type, code, ID, and sequence fields, then computes and validates the RFC 1071 checksum."
 requires-python = ">=3.10"
 dependencies = []
